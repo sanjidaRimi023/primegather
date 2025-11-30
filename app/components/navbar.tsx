@@ -48,7 +48,7 @@ const sharedTransition: Transition = {
 const gradientBtn =
   "px-4 py-2 rounded-xl text-white font-semibold bg-gradient-to-r from-[#ff5a0a] to-[#ffa727] hover:opacity-90 transition";
 const navbutton =
-  "px-4 py-2 rounded-xl font-semibold transition hover:bg-gradient-to-r hover:from-[#ff5a0a] hover:to-[#ffa727] hover:text-white";
+  "px-4 py-2 rounded-xl font-semibold transition hover:bg-gradient-to-r hover:from-[#ff5a0a] hover:to-[#ffa727] dark:text-white hover:text-white";
 
 function Navbar(): React.JSX.Element {
   const [open, setOpen] = useState(false);
@@ -59,7 +59,7 @@ function Navbar(): React.JSX.Element {
       initial="initial"
       whileHover="hover"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Image
           src="/logo.png"
@@ -132,7 +132,7 @@ function Navbar(): React.JSX.Element {
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
+{/* mobile device */}
       {open && (
         <div className="md:hidden mt-3 bg-white dark:bg-gray-900 rounded-lg p-4">
           <ul className="space-y-3">
