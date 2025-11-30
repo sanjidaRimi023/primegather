@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion, Variants, Transition } from "framer-motion";
 import { Home, User, Component, Menu, X } from "lucide-react";
 import Image from "next/image";
+import { ModeToggle } from "./toggle-btn";
 
 interface MenuItem {
   icon: React.ReactNode;
@@ -68,7 +69,7 @@ function Navbar(): React.JSX.Element {
           className="w-28 sm:w-36"
         />
 
-        {/* Desktop Menu */}
+        {/* menu item */}
         <ul className="hidden md:flex items-center gap-4">
           {menuItems.map((item: MenuItem) => (
             <motion.li key={item.label} className="relative">
@@ -98,7 +99,7 @@ function Navbar(): React.JSX.Element {
 
                 <motion.a
                   href={item.href}
-                  className="flex items-center gap-2 px-4 py-2 absolute inset-0 z-10 text-gray-600 dark:text-gray-300 transition-colors rounded-xl"
+                  className="flex items-center gap-2 px-4 py-2 absolute inset-0 z-10 transition-colors rounded-xl"
                   variants={backVariants}
                   transition={sharedTransition}
                   style={{
@@ -117,12 +118,13 @@ function Navbar(): React.JSX.Element {
           ))}
         </ul>
 
-        {/* Buttons (Desktop) */}
         <div className="hidden md:flex items-center gap-3">
+          <span className="text-white">
+            <ModeToggle />
+          </span>
           <button className={gradientBtn}>Register</button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden text-gray-900 dark:text-white"
           onClick={() => setOpen(!open)}
@@ -131,7 +133,6 @@ function Navbar(): React.JSX.Element {
         </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
       {open && (
         <div className="md:hidden mt-3 bg-white dark:bg-gray-900 rounded-lg p-4">
           <ul className="space-y-3">
@@ -139,7 +140,7 @@ function Navbar(): React.JSX.Element {
               <a
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 {item.icon}
                 {item.label}
@@ -148,7 +149,9 @@ function Navbar(): React.JSX.Element {
           </ul>
 
           <div className="flex flex-col gap-3 mt-4">
-            <button className={gradientBtn}>Login</button>
+            <span className="text-white">
+              <ModeToggle />
+            </span>
             <button className={gradientBtn}>Register</button>
           </div>
         </div>
