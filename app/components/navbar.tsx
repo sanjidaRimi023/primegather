@@ -47,6 +47,7 @@ const sharedTransition: Transition = {
 // Reusable gradient button
 const gradientBtn =
   "px-4 py-2 rounded-xl text-white font-semibold bg-gradient-to-r from-[#ff5a0a] to-[#ffa727] hover:opacity-90 transition";
+  
 const navbutton =
   "px-4 py-2 rounded-xl font-semibold transition hover:bg-gradient-to-r hover:from-[#ff5a0a] hover:to-[#ffa727] dark:text-white hover:text-white";
 
