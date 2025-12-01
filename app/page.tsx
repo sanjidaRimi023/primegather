@@ -1,4 +1,5 @@
 import BannerSection from "./components/customs/banner";
+import EventSection from "./event/page";
 
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
    <>
    <div>
     <BannerSection/>
+    <EventSection/>
    </div>
    </>
   );
