@@ -6,7 +6,7 @@ import fetcher from "@/lib/fetcher";
 const EventSection = async () => {
   const data = await fetcher("https://dummyjson.com/products?limit=30");
  
-  const events = data.products as EventType[] || [];
+  const events = (data as { products: EventType[] }).products || [];
 console.log(events);
   return (
     <div>

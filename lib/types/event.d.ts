@@ -3,9 +3,18 @@ export interface EventType {
   title: string;
   description: string;
   category: string;
-  rating: string;
-  price: string;
-  images: string ;
-  thumbnail:string;
-  stock : number
+  price: number;
+  images: string[];
+  thumbnail: string;
+  rating: number;
+  stock: number;
+  tags: string[];
+  brand: string; // dummyjson has this too
+}
+
+export interface EventListResponse {
+  products: EventType[];
+  total: number;
+  skip: number;
+  limit: number;
 }

@@ -5,10 +5,10 @@ import EventGrid from "./eventGrid";
 import EventCard from "./event-card";
 
 const FeatureEvents = async () => {
-  const data = await fetcher("https://dummyjson.com/products?limit=30");
+  const data = await fetcher<{products?: EventType[]}>("https://dummyjson.com/products?limit=30");
  
-  const events = data.products as EventType[] || [];
-console.log(events);
+  const events = data?.products ?? [];
+
   return (
     <div>
       <EventGrid>
