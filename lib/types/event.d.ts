@@ -6,5 +6,6 @@ export interface EventType {
   rating: string;
   price: string;
   images: string ;
-  thumbnail:string
+  thumbnail:string;
+  stock : number
 }

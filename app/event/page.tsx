@@ -1,14 +1,13 @@
-import React from "react";
-import EventGrid from "../components/eventGrid";
-import EventCard from "../components/event-card";
+import EventGrid from "./components/eventGrid";
+import EventCard from "./components/event-card";
 import { EventType } from "@/lib/types/event";
+import fetcher from "@/lib/fetcher";
 
 const EventSection = async () => {
-  const res = await fetch("https://dummyjson.com/products?limit=30");
-  const data = (await res.json()) as {products?: EventType[]};
-  const events = data.products??[];
-
-
+  const data = await fetcher("https://dummyjson.com/products?limit=30");
+ 
+  const events = data.products as EventType[] || [];
+console.log(events);
   return (
     <div>
       <EventGrid>
