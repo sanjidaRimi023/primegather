@@ -19,8 +19,8 @@ const menuItems: MenuItem[] = [
   },
   {
     icon: <Component className="h-5 w-5" />,
-    label: "Categorys",
-    href: "/",
+    label: "Events",
+    href: "/event",
   },
   {
     icon: <User className="h-5 w-5" />,
