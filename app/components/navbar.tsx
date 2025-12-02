@@ -15,17 +15,17 @@ const menuItems: MenuItem[] = [
   {
     icon: <Home className="h-5 w-5" />,
     label: "Home",
-    href: "#",
+    href: "/",
   },
   {
     icon: <Component className="h-5 w-5" />,
     label: "Categorys",
-    href: "#",
+    href: "/",
   },
   {
     icon: <User className="h-5 w-5" />,
     label: "About us",
-    href: "#",
+    href: "/",
   },
 ];
 
