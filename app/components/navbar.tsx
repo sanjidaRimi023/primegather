@@ -4,12 +4,15 @@ import { motion, Variants, Transition } from "framer-motion";
 import { Home, User, Component, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { ModeToggle } from "./toggle-btn";
-import RegisterModal from "../(auth)/components/register-modal";
 
 interface MenuItem {
   icon: React.ReactNode;
   label: string;
   href: string;
+}
+interface NavbarProps {
+  modalOpen: boolean;
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const menuItems: MenuItem[] = [
@@ -52,9 +55,9 @@ const gradientBtn =
 const navbutton =
   "px-4 py-2 rounded-xl font-semibold transition hover:bg-gradient-to-r hover:from-[#ff5a0a] hover:to-[#ffa727] dark:text-white hover:text-white";
 
-function Navbar(): React.JSX.Element {
+function Navbar({setModalOpen}:NavbarProps): React.JSX.Element {
   const [open, setOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+
 
   return (
     <motion.nav
@@ -127,7 +130,7 @@ function Navbar(): React.JSX.Element {
           </span>
           <button className={gradientBtn} onClick={()=>setModalOpen(true)}>Register</button>
         </div>
-        <RegisterModal open={modalOpen} onClose={() => setModalOpen(false)} />
+     
         <button
           className="md:hidden text-gray-900 dark:text-white"
           onClick={() => setOpen(!open)}

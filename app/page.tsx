@@ -8,6 +8,7 @@ export default function Home() {
    <div>
     <BannerSection/>
 <FeatureEvents/>
+
    </div>
    </>
   );

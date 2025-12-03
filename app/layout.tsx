@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+"use client";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-provider";
+import React, { useState } from "react";
+import RegisterModal from "./(auth)/components/register-modal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,16 +17,12 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "primegather",
-  description: "PrimeGater : A event management web application",
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
@@ -35,7 +33,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {" "}
-          <Navbar />
+          <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen} />
+          <RegisterModal open={modalOpen} onClose={() => setModalOpen(false)} />
           {children}
           <Footer />
         </ThemeProvider>

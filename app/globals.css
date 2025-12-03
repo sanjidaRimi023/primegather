@@ -54,7 +54,6 @@ h1, h2, h3 {
   font-family: var(--font-playfair), serif;
 }
 
-
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination"; 
 import "swiper/css/effect-fade"; 
+import { useState } from "react";
+import RegisterModal from "@/app/(auth)/components/register-modal";
 const slidesData = [
   {
     id: 1,
@@ -41,6 +43,8 @@ const slidesData = [
 ];
 
 export default function BannerSection() {
+  const [modalOpen,setModalOpen]=useState(false)
+
   return (
     <section className="w-full h-screen overflow-hidden">
       <Swiper
@@ -91,6 +95,7 @@ export default function BannerSection() {
           </SwiperSlide>
         ))}
       </Swiper>
+        <RegisterModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }

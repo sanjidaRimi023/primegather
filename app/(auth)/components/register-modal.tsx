@@ -1,24 +1,29 @@
 "use client";
+
 import { RegisterModalProps } from "@/lib/types/register";
-import { X } from "lucide-react";
-import React from "react";
+import Image from "next/image";
+import RegisterModalBase from "./register-modal-base";
+import RegisterForm from "./register-form";
 
-export default function RegisterModal({ open, onClose, children }:RegisterModalProps) {
-  if (!open) return null;
-
+export default function RegisterModal({ open, onClose }: RegisterModalProps) {
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white dark:bg-black rounded-xl shadow-lg w-full max-w-4xl p-0 relative">
-        
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
-        >
-          <X/>
-        </button>
+    <RegisterModalBase open={open} onClose={onClose}>
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="p-6">
+          <RegisterForm />
+        </div>
 
-        {children}
+        {/* Right: Image */}
+        <div className="hidden md:block">
+          <Image
+            width={300}
+            height={300}
+            src="/image2.jpg"
+            alt="Register"
+            className="w-full h-full object-cover rounded-r-xl"
+          />
+        </div>
       </div>
-    </div>
+    </RegisterModalBase>
   );
 }
