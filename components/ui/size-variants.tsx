@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Modal from "./modal";
-import Button from "../button/button";
+import { Button } from "./button";
+
 
 const SizeVariantsView: React.FC = () => {
   const [isSmallOpen, setIsSmallOpen] = useState(false);
@@ -157,7 +158,7 @@ const SizeVariantsView: React.FC = () => {
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div
                 key={item}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
+                className="bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
               >
                 <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">
                   Item {item}
