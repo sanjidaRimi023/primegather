@@ -29,7 +29,7 @@ const menuItems: MenuItem[] = [
   {
     icon: <User className="h-5 w-5" />,
     label: "About us",
-    href: "/",
+    href: "/about",
   },
 ];
 
