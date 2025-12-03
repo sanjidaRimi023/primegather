@@ -147,9 +147,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       
-      {/* 1. Hero Header */}
+     
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image/Overlay */}
+        
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/images/event-hero.jpg")', filter: 'brightness(0.5)' }} /> 
         <div className="absolute inset-0 bg-orange-900/40" />
         
@@ -175,7 +175,7 @@ export default function AboutPage() {
       </div>
 
       {/* 2. Our Story / Mission */}
-      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Image placeholder */}
             <motion.div
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 className="order-2 md:order-1"
             >
                 {/*  */}
-                <div className="w-full h-80 bg-gray-200 rounded-xl shadow-2xl relative overflow-hidden">
+                <div className="w-full h-80 rounded-xl shadow-2xl relative overflow-hidden">
                     <Image width={1000} height={1000} src="/image2.jpg" alt="Our founding team collaborating" className=" object-cover" />
                 </div>
             </motion.div>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                     From Vision to Flawless Execution
                 </h3>
                 <p className="mt-4 text-lg text-gray-600">
-                    PrimeGather was founded on the simple belief that **events should elevate and inspire**. Tired of the logistical headaches and predictable outcomes, our founders envisioned a service where creativity meets military-grade precision. Today, we stand as a trusted partner for global brands and private clients alike, ensuring every gathering is a strategic success and a profound experience.
+                    PrimeGather was founded on the simple belief that events should elevate and inspire. Tired of the logistical headaches and predictable outcomes, our founders envisioned a service where creativity meets military-grade precision. Today, we stand as a trusted partner for global brands and private clients alike, ensuring every gathering is a strategic success and a profound experience.
                 </p>
                 <p className="mt-4 text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-3 italic">
                 Our mission is to transform your highest expectations into a tangible, celebrated reality
@@ -215,7 +215,6 @@ export default function AboutPage() {
       
       <hr className="max-w-6xl mx-auto border-gray-200" />
 
-      {/* 3. Our Values (Interactive Grid) */}
       <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-base font-semibold text-orange-600 tracking-wider uppercase">The Core</h2>
@@ -232,7 +231,6 @@ export default function AboutPage() {
       
       <hr className="max-w-6xl mx-auto border-gray-200" />
 
-      {/* 4. The PrimeGather Difference (Process Timeline) */}
       <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-base font-semibold text-orange-600 tracking-wider uppercase text-center">Our Methodology</h2>
@@ -240,9 +238,8 @@ export default function AboutPage() {
             The Four Steps to Unforgettable Events
           </h3>
           
-          {/* Timeline Structure (Using a simple staggered list for responsiveness) */}
+       
           <div className="max-w-3xl mx-auto space-y-6 relative">
-            {/* Vertical Line for Visual Timeline */}
             <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gray-200 hidden md:block" />
 
             {processSteps.map((step, index) => (
@@ -250,10 +247,8 @@ export default function AboutPage() {
                 key={step.title} 
                 className={`relative flex ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} justify-center`}
               >
-                {/* Connector Dot */}
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-4 w-4 h-4 bg-orange-600 rounded-full z-10 ring-8 ring-white" />
                 
-                {/* Content Block */}
                 <div className="w-full md:w-[45%]">
                     <ProcessStep {...step} />
                 </div>
@@ -266,7 +261,6 @@ export default function AboutPage() {
       
       <hr className="max-w-6xl mx-auto border-gray-200" />
 
-      {/* 5. Call to Action (CTA) */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-orange-600 text-center">
         <motion.div
             initial={{ opacity: 0, y: 30 }}
