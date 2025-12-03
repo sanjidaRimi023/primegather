@@ -1,7 +1,6 @@
 "use client";
 import { EventType } from "@/lib/types/event";
 import Image from "next/image";
-import React, { useState } from "react";
 
 import Button from "../../components/customs/button";
 import Link from "next/link";
@@ -10,12 +9,10 @@ type EventCardProps = {
 };
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
-  const [isActive, setIsActive] = useState(false);
-  const [activeCard, setIsActiveCard] = useState<EventType | null>(null);
 
   return (
     <>
-      <div className="border rounded-md transition-all duration-300 hover:border-orange-500 p-3">
+      <div className="border rounded-md transition-all duration-300 hover:border-orange-500 p-3 hover:shadow-2xl hover:shadow-amber-600">
         <div className="relative">
           <span className="absolute top-2 left-2 bg-orange-500 text-white text-xs px-3 py-1 rounded-full z-20">
             {event.stock > 0 ? `In stock: ${event.stock}` : "Out of stock"}
