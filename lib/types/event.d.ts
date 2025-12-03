@@ -9,7 +9,7 @@ export interface EventType {
   rating: number;
   stock: number;
   tags: string[];
-  brand: string; // dummyjson has this too
+  brand: string;
 }
 
 export interface EventListResponse {
