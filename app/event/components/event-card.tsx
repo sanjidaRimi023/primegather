@@ -12,7 +12,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
 
   return (
     <>
-      <div className="border rounded-md transition-all duration-300 hover:border-orange-500 p-3 hover:shadow-2xl hover:shadow-amber-600">
+      <div className="border border-amber-300 rounded-md transition-all duration-300 hover:border-orange-500 p-3 hover:shadow-2xl hover:shadow-amber-600">
         <div className="relative">
           <span className="absolute top-2 left-2 bg-orange-500 text-white text-xs px-3 py-1 rounded-full z-20">
             {event.stock > 0 ? `In stock: ${event.stock}` : "Out of stock"}

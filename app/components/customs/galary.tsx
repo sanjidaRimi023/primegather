@@ -75,7 +75,7 @@ interface GalleryProps {
 
 function Gallery({ items, setIndex, index }: GalleryProps) {
   return (
-    <div className='flex overflow-hidden gap-4'>
+    <div className='flex overflow-hidden gap-4 my-8'>
       {items.map((item: item, i: number) => (
         <motion.div
           key={i}
