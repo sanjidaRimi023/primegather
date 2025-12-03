@@ -1,4 +1,5 @@
 import BannerSection from "./components/customs/banner";
+import Brand from "./components/customs/brand";
 import FeatureEvents from "./event/components/feature-events";
 
 
@@ -8,7 +9,7 @@ export default function Home() {
    <div>
     <BannerSection/>
 <FeatureEvents/>
-
+<Brand/>
    </div>
    </>
   );
