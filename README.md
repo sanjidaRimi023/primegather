@@ -1,4 +1,4 @@
-````markdown
+
 # PrimeGather ✨
 
 [![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)](https://github.com/sanjidaRimi023/primegather)
