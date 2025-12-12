@@ -68,7 +68,7 @@ const processSteps: ProcessStep[] = [
 const ValueCard: React.FC<Value> = ({ icon: Icon, title, description }) => {
   return (
     <motion.div
-      className="p-6 md:p-8 bg-orange-400/5 border border-orange-100/50 rounded-xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+      className="p-6 md:p-8 bg-orange-400/5 dark:bg-orange-800/10 border border-orange-100 rounded-xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow dark:text-white items-center flex flex-col"
       whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(99, 102, 241, 0.2)' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
    
@@ -76,9 +76,9 @@ const ValueCard: React.FC<Value> = ({ icon: Icon, title, description }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
     >
-      <Icon className="w-8 h-8 text-orange-600 mb-4" />
-      <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <Icon className="w-8 h-8 text-orange-600  mb-4" />
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="">{description}</p>
     </motion.div>
   );
 };
@@ -96,7 +96,7 @@ const ProcessStep: React.FC<ProcessStep> = ({ icon: Icon, title, description, de
 
     return (
         <motion.div
-            className="flex items-start space-x-4 p-4 rounded-lg bg-white"
+            className="flex items-start space-x-4 p-4 rounded-lg dark:bg-amber-900 dark:text-white"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -106,8 +106,8 @@ const ProcessStep: React.FC<ProcessStep> = ({ icon: Icon, title, description, de
                 <Icon className="w-5 h-5 text-white" />
             </div>
             <div>
-                <h4 className="text-lg font-semibold text-gray-900">{title}</h4>
-                <p className="text-sm text-gray-600">{description}</p>
+                <h4 className="text-lg font-semibold">{title}</h4>
+                <p className="text-sm">{description}</p>
             </div>
         </motion.div>
     );
@@ -132,26 +132,15 @@ export default function AboutPage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const pulseVariants = {
-    initial: { scale: 1 },
-    animate: {
-      scale: [1, 1.05, 1],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    },
-  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
       
      
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden ">
         
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/images/event-hero.jpg")', filter: 'brightness(0.5)' }} /> 
-        <div className="absolute inset-0 bg-orange-900/40" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("eventbg3.jpg")' }} /> 
+        <div className="absolute inset-0" />
         
         <motion.div
           className="relative text-center max-w-4xl p-6"
@@ -166,17 +155,17 @@ export default function AboutPage() {
             Gathering Excellence.
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl md:text-2xl text-orange-200"
+            className="mt-4 text-xl md:text-2xl "
             variants={itemVariants}
           >
-            We dont just plan events; we **orchestrate memories**. Welcome to PrimeGather.
+            We dont just plan events; we orchestrate memories. Welcome to PrimeGather.
           </motion.p>
         </motion.div>
       </div>
 
       {/* 2. Our Story / Mission */}
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center dark:text-white">
             {/* Image placeholder */}
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -187,7 +176,7 @@ export default function AboutPage() {
             >
                 {/*  */}
                 <div className="w-full h-80 rounded-xl shadow-2xl relative overflow-hidden">
-                    <Image width={1000} height={1000} src="/image2.jpg" alt="Our founding team collaborating" className=" object-cover" />
+                    <Image width={1000} height={1000} src="/image3.jpg" alt="Our founding team collaborating" className=" object-cover" />
                 </div>
             </motion.div>
             
@@ -200,13 +189,13 @@ export default function AboutPage() {
                 className="order-1 md:order-2"
             >
                 <h2 className="text-base font-semibold text-orange-600 tracking-wider uppercase">Our Foundation</h2>
-                <h3 className="mt-2 text-4xl font-extrabold text-gray-900">
+                <h3 className="mt-2 text-4xl font-extrabold dark:text-white">
                     From Vision to Flawless Execution
                 </h3>
-                <p className="mt-4 text-lg text-gray-600">
+                <p className="mt-4 text-lg">
                     PrimeGather was founded on the simple belief that events should elevate and inspire. Tired of the logistical headaches and predictable outcomes, our founders envisioned a service where creativity meets military-grade precision. Today, we stand as a trusted partner for global brands and private clients alike, ensuring every gathering is a strategic success and a profound experience.
                 </p>
-                <p className="mt-4 text-lg font-semibold text-gray-800 border-l-4 border-orange-500 pl-3 italic">
+                <p className="mt-4 text-lg font-semibold border-l-5 border-orange-500 pl-3 italic">
                 Our mission is to transform your highest expectations into a tangible, celebrated reality
                 </p>
             </motion.div>
@@ -215,10 +204,10 @@ export default function AboutPage() {
       
       <hr className="max-w-6xl mx-auto border-gray-200" />
 
-      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 dark:text-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-base font-semibold text-orange-600 tracking-wider uppercase">The Core</h2>
-          <h3 className="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h3 className="mt-2 text-3xl md:text-4xl font-extrabold ">
             Principles that Guide Every PrimeGather Event
           </h3>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -231,10 +220,10 @@ export default function AboutPage() {
       
       <hr className="max-w-6xl mx-auto border-gray-200" />
 
-      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-base font-semibold text-orange-600 tracking-wider uppercase text-center">Our Methodology</h2>
-          <h3 className="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
+          <h3 className="mt-2 text-3xl md:text-4xl font-extrabold dark:text-white text-center mb-12">
             The Four Steps to Unforgettable Events
           </h3>
           
@@ -258,8 +247,6 @@ export default function AboutPage() {
 
         </div>
       </section>
-      
-      <hr className="max-w-6xl mx-auto border-gray-200" />
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-orange-600 text-center">
         <motion.div
@@ -276,7 +263,7 @@ export default function AboutPage() {
             </p>
             
             <motion.a
-                href="/contact" 
+                href="/" 
                 className="mt-8 inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-full shadow-lg text-orange-700 bg-white hover:bg-orange-50 transition duration-300"
                 
                 initial="initial"
@@ -288,6 +275,6 @@ export default function AboutPage() {
       </section>
       
    
-    </div>
+    </>
   );
 }
